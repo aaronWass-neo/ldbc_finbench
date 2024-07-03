@@ -1,0 +1,20 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/Company.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Company
+        key: 
+          companyId: !jmespath companyId
+        properties:
+          companyName: !jmespath companyName
+          isBlocked: !jmespath isBlocked
+          createTime: !jmespath createTime
+          country: !jmespath country
+          city: !jmespath city
+          business: !jmespath business
+          description: !jmespath description
+          url: !jmespath url

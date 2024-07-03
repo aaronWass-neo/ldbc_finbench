@@ -1,0 +1,20 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/AccountRepayLoan.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Account
+        key:
+          accountId: !jmespath accountId
+      - type: relationship
+        relationship_type: REPAY
+        node_type: Loan
+        node_key:
+          loanId: !jmespath loanId
+        relationship_properties: 
+          amount: !jmespath amount
+        relationship_key: 
+          createTime: !jmespath createTime

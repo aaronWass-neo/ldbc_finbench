@@ -1,0 +1,20 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/CompanyGuaranteeCompany.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Company
+        key: 
+          companyId: !jmespath fromId
+      - type: relationship
+        relationship_type: GUARANTEE
+        node_type: Company
+        node_key: 
+          companyId: !jmespath toId
+        relationship_key: 
+          createTime: !jmespath createTime
+        relationship_properties: 
+          relation: !jmespath relation

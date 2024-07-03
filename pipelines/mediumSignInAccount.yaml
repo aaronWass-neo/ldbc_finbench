@@ -1,0 +1,20 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/MediumSignInAccount.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Medium
+        key: 
+          mediumId: !jmespath mediumId
+      - type: relationship
+        relationship_type: SIGN_IN
+        node_type: Account
+        node_key: 
+          accountId: !jmespath accountId
+        relationship_key: 
+          createTime: !jmespath createTime
+        relationship_properties:
+          location: !jmespath location

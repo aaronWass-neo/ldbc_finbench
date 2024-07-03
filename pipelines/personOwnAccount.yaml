@@ -1,0 +1,19 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/PersonOwnAccount.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Person
+        key: 
+          personId: !jmespath personId
+      - type: relationship
+        relationship_type: OWN
+        node_type: Account
+        node_key: 
+          accountId: !jmespath accountId
+        relationship_key: 
+          createTime: !jmespath createTime
+  

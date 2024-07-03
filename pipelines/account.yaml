@@ -1,0 +1,21 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/Account.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Account
+        key:
+          accountId: !jmespath accountId
+        properties:
+          createTime: !jmespath createTime
+          isBlocked: !jmespath isBlocked
+          accountType: !jmespath accoutType
+          nickname: !jmespath nickname
+          phonenum: !jmespath phonenum
+          email: !jmespath email
+          freqLoginType: !jmespath freqLoginType
+          lastLoginTime: !jmespath lastLoginTime
+          accountLevel: !jmespath accountLevel

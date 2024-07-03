@@ -1,0 +1,17 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/Loan.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Loan
+        key:
+          loanId: !jmespath loanId
+        properties:
+          loanAmount: !jmespath loanAmount
+          balance: !jmespath balance
+          createTime: !jmespath createTime
+          loanUsage: !jmespath loanUsage
+          interestRate: !jmespath interestRate

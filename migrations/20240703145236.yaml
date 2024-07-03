@@ -1,0 +1,203 @@
+dependencies: []
+name: '20240703145236'
+operations:
+- arguments:
+    keys: !!set
+      companyId: null
+    name: Company
+    properties: !!set
+      business: null
+      city: null
+      companyName: null
+      country: null
+      createTime: null
+      description: null
+      isBlocked: null
+      last_ingested_at: null
+      url: null
+  operation: CreateNodeType
+- arguments:
+    keys: !!set
+      personId: null
+    name: Person
+    properties: !!set
+      birthday: null
+      city: null
+      country: null
+      createTime: null
+      gender: null
+      isBlocked: null
+      last_ingested_at: null
+      personName: null
+  operation: CreateNodeType
+- arguments:
+    keys: !!set
+      loanId: null
+    name: Loan
+    properties: !!set
+      balance: null
+      createTime: null
+      interestRate: null
+      last_ingested_at: null
+      loanAmount: null
+      loanUsage: null
+  operation: CreateNodeType
+- arguments:
+    keys: !!set
+      accountId: null
+    name: Account
+    properties: !!set
+      accountLevel: null
+      accountType: null
+      createTime: null
+      email: null
+      freqLoginType: null
+      isBlocked: null
+      lastLoginTime: null
+      last_ingested_at: null
+      nickname: null
+      phonenum: null
+  operation: CreateNodeType
+- arguments:
+    keys: !!set
+      mediumId: null
+    name: Medium
+    properties: !!set
+      createTime: null
+      isBlocked: null
+      lastLoginTime: null
+      last_ingested_at: null
+      mediumType: null
+      riskLevel: null
+  operation: CreateNodeType
+- arguments:
+    field_name: last_ingested_at
+    node_type: Medium
+  operation: AddAdditionalNodePropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    node_type: Account
+  operation: AddAdditionalNodePropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    node_type: Company
+  operation: AddAdditionalNodePropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    node_type: Loan
+  operation: AddAdditionalNodePropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    node_type: Person
+  operation: AddAdditionalNodePropertyIndex
+- arguments:
+    keys: !!set
+      createTime: null
+    name: GUARANTEE
+    properties: !!set
+      last_ingested_at: null
+      relation: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: SIGN_IN
+    properties: !!set
+      last_ingested_at: null
+      location: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: APPLY
+    properties: !!set
+      last_ingested_at: null
+      org: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: INVEST
+    properties: !!set
+      last_ingested_at: null
+      ratio: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: WITHDRAW
+    properties: !!set
+      amount: null
+      last_ingested_at: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: REPAY
+    properties: !!set
+      amount: null
+      last_ingested_at: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: TRANSFER
+    properties: !!set
+      amount: null
+      comment: null
+      goodsType: null
+      last_ingested_at: null
+      orderNum: null
+      payType: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: OWN
+    properties: !!set
+      last_ingested_at: null
+  operation: CreateRelationshipType
+- arguments:
+    keys: !!set
+      createTime: null
+    name: DEPOSIT
+    properties: !!set
+      amount: null
+      last_ingested_at: null
+  operation: CreateRelationshipType
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: OWN
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: SIGN_IN
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: INVEST
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: APPLY
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: WITHDRAW
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: GUARANTEE
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: TRANSFER
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: REPAY
+  operation: AddAdditionalRelationshipPropertyIndex
+- arguments:
+    field_name: last_ingested_at
+    relationship_type: DEPOSIT
+  operation: AddAdditionalRelationshipPropertyIndex

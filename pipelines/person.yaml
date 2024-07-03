@@ -1,0 +1,19 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/Person.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Person
+        key:
+          personId: !jmespath personId
+        properties: 
+          personName: !jmespath personName
+          isBlocked: !jmespath isBlocked
+          createTime: !jmespath createTime
+          gender: !jmespath gender
+          birthday: !jmespath birthday
+          country: !jmespath country
+          city: !jmespath city

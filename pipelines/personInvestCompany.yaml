@@ -1,0 +1,20 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/PersonInvestCompany.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Person
+        key: 
+          personId: !jmespath investorId
+      - type: relationship
+        relationship_type: INVEST
+        node_type: Company
+        node_key:
+          companyId: !jmespath companyId
+        relationship_key: 
+          createTime: !jmespath createTime
+        relationship_properties: 
+          ratio: !jmespath ratio

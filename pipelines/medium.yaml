@@ -1,0 +1,17 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/Medium.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Medium
+        key: 
+          mediumId: !jmespath mediumId
+        properties: 
+          mediumType: !jmespath mediumType
+          isBlocked: !jmespath isBlocked
+          createTime: !jmespath createTime
+          lastLoginTime: !jmespath lastLoginTime
+          riskLevel: !jmespath riskLevel

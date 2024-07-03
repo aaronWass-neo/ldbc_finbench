@@ -1,0 +1,20 @@
+- implementation: nodestream.pipeline.extractors:FileExtractor
+  arguments:
+    globs:
+      - data/sf0.1/commadelimited/PersonApplyLoan.csv
+- implementation: nodestream.interpreting:Interpreter
+  arguments: 
+    interpretations:
+      - type: source_node
+        node_type: Person
+        key: 
+          personId: !jmespath personId
+      - type: relationship
+        relationship_type: APPLY
+        node_type: Loan
+        node_key: 
+          loanId: !jmespath loanId
+        relationship_key: 
+          createTime: !jmespath createTime
+        relationship_properties:
+          org: !jmespath org

@@ -1,0 +1,28 @@
+plugins: []
+scopes:
+  default:
+    pipelines:
+    - pipelines/account.yaml
+    - pipelines/company.yaml
+    - pipelines/loan.yaml
+    - pipelines/medium.yaml
+    - pipelines/person.yaml
+    - pipelines/accountRepayLoan.yaml
+    - pipelines/accountTransferAccount.yaml
+    - pipelines/accountWithdrawAccount.yaml
+    - pipelines/companyApplyLoan.yaml
+    - pipelines/companyGuaranteeCompany.yaml
+    - pipelines/companyInvestCompany.yaml
+    - pipelines/companyOwnAccount.yaml
+    - pipelines/loanDepositAccount.yaml
+    - pipelines/mediumSignInAccount.yaml
+    - pipelines/personApplyLoan.yaml
+    - pipelines/personGuaranteePerson.yaml
+    - pipelines/personInvestCompany.yaml
+    - pipelines/personOwnAccount.yaml
+targets:
+  my-db:
+    database: neo4j
+    password: neo4j
+    uri: bolt://localhost:7687
+    username: neo4j

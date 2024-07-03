@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ldbc_finbench"
+version = "0.1.0"
+description = "A new ingestion project using nodestream"
+readme = "README.md"
+authors = ["Your Name <your_name@your_domain.com>"] 
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nodestream = "^0.12.4"
+
+
+nodestream-plugin-neo4j = "^0.12"
+
+
+[tool.poetry.plugins."nodestream.plugins"]
+"argument_resolvers" = "ldbc_finbench.argument_resolvers"
+"interpretations" = "ldbc_finbench.interpretations"
+"normalizers" = "ldbc_finbench.normalizers"
+"value_providers" = "ldbc_finbench.value_providers"
