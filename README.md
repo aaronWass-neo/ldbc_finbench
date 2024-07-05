@@ -1,5 +1,7 @@
 # ldbc_finbench
 
+This nodestream project defines ingestion for the LDBC Financial Benchmark (LDBC FINBENCH). Learn more here: https://ldbcouncil.org/benchmarks/finbench/
+
 ## Getting Started 
 
 To get started, first install the required dependencies:
