@@ -26,3 +26,13 @@ targets:
     password: neo4j
     uri: bolt://localhost:7687
     username: neo4j
+  aura-db: 
+    database: neo4j
+    password: AURA_PASSWORD
+    uri: neo4j+s://DBID.databases.neo4j.io
+    username: neo4j
+  neptune-db:
+    database: neptune
+    mode: database
+    host: NEPTUNE_HOST
+    region: us-west-2
