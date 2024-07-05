@@ -27,6 +27,13 @@ To run a pipeline locally, use the following command:
 nodestream run $PIPELINE_NAME 
 ```
 
+To run all of the pipelines in this project, use the following command:
+This will run all the pipelines, and send them to the target aura-db, which is defined in the nodestream.yaml file 
+
+```bash
+nodestream run -t aura-db 
+```
+
 ### Running Tests
 
 To run tests, use the following command:
