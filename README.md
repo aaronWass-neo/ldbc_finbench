@@ -20,6 +20,16 @@ poetry shell
 
 The samples below assume you are in a poetry shell.
 
+### Running Migrations
+
+It is important to run a migration to prepare your database before ingesting any data. To run a migration against your database run the following command: 
+This will run the migration against the aura-db target, which is defind in the nodestream.yaml file
+
+```bash
+nodestream migrations run -t aura-db
+```
+
+
 ### Running Pipelines
 To run a pipeline locally, use the following command:
 
